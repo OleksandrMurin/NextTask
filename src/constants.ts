@@ -1,3 +1,5 @@
+import { ComponentPropsWithoutRef } from "react";
+
 // prettier-ignore
 export const TASK_ATTRIBUTES = {
   "importance": {
@@ -36,4 +38,5 @@ export type TaskAttributeProps = {
     name: K;
     variant: AttributeVariant<K>;
   };
-}[AttributeName];
+}[AttributeName] &
+  ComponentPropsWithoutRef<"div">;

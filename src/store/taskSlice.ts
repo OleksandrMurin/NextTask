@@ -9,16 +9,17 @@ const initialState: TaskState = {
   tasks: [
     {
       id: 1,
-      name: "Task1",
+      name: "Homework for polish",
       isComplete: false,
       rank: "C",
       type: "education",
       estimatedTime: 180,
-      importance: "moderately important",
-      urgency: "not urgent",
-      difficulty: "moderate",
+      importance: "extremely important",
+      urgency: "urgent",
+      difficulty: "insane",
       severity: "low",
       deadline: "10.11.2025",
+      reward: 275,
     },
   ],
 };
