@@ -33,11 +33,6 @@ export const CARD_THEME: Record<RankOfTask, Record<string, string>> = {
     border_color: "border-fuchsia-900",
     shadow_color: "shadow-fuchsia-700",
   },
-  E: {
-    background: "bg-[#FEEDFF]",
-    border_color: "border-fuchsia-900",
-    shadow_color: "shadow-fuchsia-700",
-  },
 };
 
 export const FrontalSideOfCard: FC<Props> = ({ task }) => {

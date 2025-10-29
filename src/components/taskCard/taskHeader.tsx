@@ -20,7 +20,6 @@ const RANK_IMAGE: Record<RankOfTask, string> = {
   B: "/B.svg",
   C: "/C.svg",
   D: "/D.svg",
-  E: "/E.svg",
 };
 
 export const TaskHeader: FC<Props> = ({ type, rank, isComplete }) => {

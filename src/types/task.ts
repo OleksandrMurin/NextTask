@@ -7,7 +7,7 @@ export type ImportanceVariants =
 export type UrgencyVariants = "not urgent" | "semi-urgent" | "urgent";
 export type DifficultyVariants = "easy" | "moderate" | "hard" | "insane";
 export type SeverityVariants = "low" | "medium" | "hight" | "critical";
-export type RankOfTask = "S" | "A" | "B" | "C" | "D" | "E";
+export type RankOfTask = "S" | "A" | "B" | "C" | "D";
 export type TypeOfTask = "education" | "work" | "domestic";
 
 export interface Task {
@@ -23,4 +23,11 @@ export interface Task {
   severity?: SeverityVariants;
   deadline?: string;
   reward: number;
+}
+
+export interface TaskReward {
+  XP_rank: number;
+  XP_time_bonus: number;
+  XP_combo_bonus: number;
+  XP_series_multiplier: number;
 }
