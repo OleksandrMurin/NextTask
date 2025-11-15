@@ -1,11 +1,6 @@
-export type ImportanceVariants =
-  | "unimportant"
-  | "slightly important"
-  | "moderately important"
-  | "important"
-  | "extremely important";
-export type UrgencyVariants = "not urgent" | "semi-urgent" | "urgent";
-export type DifficultyVariants = "easy" | "moderate" | "hard" | "insane";
+export type ImportanceVariants = 1 | 2 | 3 | 4 | 5;
+export type UrgencyVariants = 1 | 2 | 3;
+export type DifficultyVariants = 1 | 2 | 3 | 4;
 export type SeverityVariants = "low" | "medium" | "hight" | "critical";
 export type RankOfTask = "S" | "A" | "B" | "C" | "D";
 export type TypeOfTask = "education" | "work" | "domestic";
@@ -21,7 +16,7 @@ export interface Task {
   urgency: UrgencyVariants;
   difficulty: DifficultyVariants;
   severity?: SeverityVariants;
-  deadline?: string;
+  deadline: string;
   reward: number;
 }
 

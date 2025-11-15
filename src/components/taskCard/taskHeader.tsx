@@ -37,7 +37,7 @@ export const TaskHeader: FC<Props> = ({ type, rank, isComplete }) => {
           />
         </div>
         {!isComplete && (
-          <p className="pt-3 text-red-500 text-xs h-full">
+          <p className="pt-3 text-red-500 text-xs italic h-full">
             Still in progress...
           </p>
         )}

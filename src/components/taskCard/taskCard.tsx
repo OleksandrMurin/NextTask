@@ -8,18 +8,39 @@ interface TaskCardProps {
 }
 
 const TaskCard: FC<TaskCardProps> = ({ task }) => {
-  const [isFrontalSideActive, setIsFrontalSideActive] = useState(true);
+  const [flipped, setFlipped] = useState(false);
+
   return (
-    <div className="" onClick={() => setIsFrontalSideActive((prev) => !prev)}>
-      {isFrontalSideActive && <FrontalSideOfCard task={task} />}
-      {!isFrontalSideActive && (
-        <BackSideOfCard
-          type={task.type}
-          rank={task.rank}
-          isComplete={task.isComplete}
-          reward={task.reward}
-        />
-      )}
+    <div
+      className="w-[290px] h-[465px] cursor-pointer"
+      style={{ perspective: "1000px" }}
+      onClick={() => setFlipped((p) => !p)}
+    >
+      <div
+        className={`
+          relative w-full h-full transition-transform duration-1000
+          [transform-style:preserve-3d]
+          ${flipped ? "[transform:rotateY(180deg)]" : ""}
+        `}
+      >
+        <div
+          className="
+            absolute inset-0 rounded-xl shadow-xl bg-white 
+            [backface-visibility:hidden]
+          "
+        >
+          <FrontalSideOfCard task={task} />
+        </div>
+        <div
+          className="
+            absolute inset-0 rounded-xl shadow-xl bg-white
+            [transform:rotateY(180deg)] 
+            [backface-visibility:hidden]
+          "
+        >
+          <BackSideOfCard {...task} />
+        </div>
+      </div>
     </div>
   );
 };

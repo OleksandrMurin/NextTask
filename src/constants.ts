@@ -1,42 +1,42 @@
 import { ComponentPropsWithoutRef } from "react";
 
-// prettier-ignore
-export const TASK_ATTRIBUTES = {
-  "importance": {
-    "unimportant": 1,
-    "slightly important": 2,
-    "moderately important": 3,
-    "important": 4,
-    "extremely important": 5,
-  },
-  "urgency": {
-    "not urgent": 1,
-    "semi-urgent": 2,
-    "urgent": 3,
-  },
-  "difficulty": {
-    "easy": 1,
-    "moderate": 2,
-    "hard": 3,
-    "insane": 4,
-  },
-  "severity": {
-    "low": 1,
-    "medium": 2,
-    "hight": 3,
-    "critical": 4,
-  }
-}
+export const RANKS_BASE_COLOR = {
+  S: "#F5B33B",
+  A: "#80B357",
+  B: "#3EA5D0",
+  C: "#A758C3",
+  D: "#E3393C",
+};
 
-type TaskAttributes = typeof TASK_ATTRIBUTES;
-type AttributeName = keyof TaskAttributes;
-type AttributeVariant<K extends AttributeName> = keyof TaskAttributes[K];
+export const TASK_ATTRIBUTES = {
+  importance: [
+    "unimportant",
+    "slightly important",
+    "moderately important",
+    "important",
+    "extremely important",
+  ],
+  urgency: ["not urgent", "semi-urgent", "urgent"],
+  difficulty: ["easy", "moderate", "hard", "insane"],
+
+  severity: ["low", "medium", "high", "critical"],
+};
+
+export type TaskAttributeProps = {
+  name: TaskAttributeName;
+  variant: number;
+} & ComponentPropsWithoutRef<"div">;
+
+export type TaskAttributeName = keyof typeof TASK_ATTRIBUTES;
+
+// type TaskAttributes = typeof TASK_ATTRIBUTES;
+// type AttributeName = keyof TaskAttributes;
+// type AttributeVariant<K extends AttributeName> = keyof TaskAttributes[K];
 
 // mapped-union: создаёт объединение конкретных пар {name, variant}
-export type TaskAttributeProps = {
-  [K in AttributeName]: {
-    name: K;
-    variant: AttributeVariant<K>;
-  };
-}[AttributeName] &
-  ComponentPropsWithoutRef<"div">;
+// {
+//   [K in AttributeName]: {
+//     name: K;
+//     variant: AttributeVariant<K>;
+//   };
+// }[AttributeName]

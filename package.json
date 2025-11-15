@@ -13,6 +13,7 @@
     "classnames": "^2.5.1",
     "dayjs": "^1.11.18",
     "fullcalendar": "^6.1.19",
+    "hex-to-hsl": "^1.0.2",
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",

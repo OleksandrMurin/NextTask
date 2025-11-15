@@ -1,4 +1,4 @@
-import { RankOfTask, Task } from "@/types/task";
+import { Task } from "@/types/task";
 import Image from "next/image";
 import { FC } from "react";
 import { TaskAttribute } from "./taskAttribute";
@@ -7,42 +7,16 @@ import { TaskHeader } from "./taskHeader";
 interface Props {
   task: Task;
 }
-export const CARD_THEME: Record<RankOfTask, Record<string, string>> = {
-  S: {
-    background: "bg-[#FEEDFF]",
-    border_color: "border-fuchsia-900",
-    shadow_color: "shadow-fuchsia-700",
-  },
-  A: {
-    background: "bg-[#FEEDFF]",
-    border_color: "border-fuchsia-900",
-    shadow_color: "shadow-fuchsia-700",
-  },
-  B: {
-    background: "bg-[#FEEDFF]",
-    border_color: "border-fuchsia-900",
-    shadow_color: "shadow-fuchsia-700",
-  },
-  C: {
-    background: "bg-[#FEEDFF]",
-    border_color: "border-fuchsia-900",
-    shadow_color: "shadow-fuchsia-700",
-  },
-  D: {
-    background: "bg-[#FEEDFF]",
-    border_color: "border-fuchsia-900",
-    shadow_color: "shadow-fuchsia-700",
-  },
-};
 
 export const FrontalSideOfCard: FC<Props> = ({ task }) => {
   return (
     <div
-      className={`p-2 flex flex-col ${
-        CARD_THEME[task.rank].background
-      } border-3 shadow-lg ${CARD_THEME[task.rank].shadow_color} ${
-        CARD_THEME[task.rank].border_color
-      } rounded-2xl max-w-1/6`}
+      style={{
+        background: `var(--rank-${task.rank}-bg-color)`,
+        borderColor: `var(--rank-${task.rank}-border-color)`,
+        boxShadow: `0 8px 16px 0 var(--rank-${task.rank}-hover-color)`,
+      }}
+      className={`p-2 flex flex-col border-3 shadow-lg rounded-2xl w-fit`}
     >
       <TaskHeader
         type={task.type}

@@ -1,3 +1,4 @@
+import { generateCardPalette } from "@/components/rankPaletteInjector";
 import "./globals.css";
 import { Providers } from "./providers";
 
@@ -24,9 +25,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const css = generateCardPalette();
   return (
     <html lang="en">
+      <head></head>
       <body
+        style={css}
         className={`${poppins.variable} ${jetbrainsMono.variable} bg-[#F8F6FB] antialiased`}
       >
         <Providers>{children}</Providers>

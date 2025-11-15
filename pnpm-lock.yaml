@@ -20,6 +20,9 @@ importers:
       fullcalendar:
         specifier: ^6.1.19
         version: 6.1.19
+      hex-to-hsl:
+        specifier: ^1.0.2
+        version: 1.0.2
       next:
         specifier: 15.5.4
         version: 15.5.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1159,6 +1162,12 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  hex-to-hsl@1.0.2:
+    resolution: {integrity: sha512-7E2WDAXDNb51Ezc+/MyXOt/NbKgk4LPtEHpUBU0McJVF1seFxUhiOQyf9Sv/5NwTQntsEqzevCsv/Y6chOFLvg==}
+
+  hex-to-rgb@1.0.1:
+    resolution: {integrity: sha512-2GsESdjpJIrRL8I7iPOp0r0wczJBk++Q/zFrviNaTRPWMIgk5bPqDmKPUvRHN0SZrYT9N1e+xZU1niYJ6QxzMg==}
+
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
@@ -1647,6 +1656,9 @@ packages:
   reusify@1.1.0:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+
+  rgb-to-hsl@0.0.2:
+    resolution: {integrity: sha512-92EhT0XUmmC1APQj5NKl3LoNPtZsDBzivTjZAikFuADreIQgqLnJgnnP5gY/mf52UqglAwVDAD/0arY9N35KFg==}
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -3095,6 +3107,13 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  hex-to-hsl@1.0.2:
+    dependencies:
+      hex-to-rgb: 1.0.1
+      rgb-to-hsl: 0.0.2
+
+  hex-to-rgb@1.0.1: {}
+
   ignore@5.3.2: {}
 
   ignore@7.0.5: {}
@@ -3565,6 +3584,8 @@ snapshots:
       supports-preserve-symlinks-flag: 1.0.0
 
   reusify@1.1.0: {}
+
+  rgb-to-hsl@0.0.2: {}
 
   run-parallel@1.2.0:
     dependencies:
